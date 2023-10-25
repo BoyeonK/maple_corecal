@@ -1,21 +1,25 @@
 import styled from "styled-components";
+import CoreBtns from "./corebtns";
 
 const CoreSelection = () => {
   return (
-    <CoreDiv>
+    <Core>
       <CoreSubs>강화할 코어를 전부 골라골라라</CoreSubs>
-    </CoreDiv>
+      <CoreBtns/>
+    </Core>
   );
 }
 
-const CoreDiv = styled.div`
-  margin-top: 45px;
+const Core = styled.div`
+  width: 100%;
+  margin: 50px 10px 10px;
   text-align: center;
 `
 
-const CoreSubs = styled.span`
+const CoreSubs = styled.div`
   margin: 0 auto;
   font-size: 16px;
+  height: 30px;
 `
 
 export default CoreSelection;
