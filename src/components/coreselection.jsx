@@ -11,7 +11,7 @@ const CoreSelection = () => {
     <>
       {Role ? (
         <Core>
-          <CoreSubs>강화할 코어를 전부 골라골라라</CoreSubs>
+          <CoreSubs>강화할 코어를 모두 선택하세요</CoreSubs>
           <CoreBtns/>
           <CoreCompleteBtn/>
         </Core>

@@ -4,7 +4,7 @@ const CoreCompleteBtn = () => {
   return (
     <CoreBtnDiv>
       <CoreToggle>
-        센따꾸 완료
+        선택 완료
       </CoreToggle>
     </CoreBtnDiv>
   );
