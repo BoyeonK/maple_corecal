@@ -12,7 +12,7 @@ const RoleSelection = () => {
 
 const Role = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin: 10px 10px 10px;
   height: 60px;
   width: 100%;
   align-items: center;
