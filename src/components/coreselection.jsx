@@ -1,14 +1,25 @@
 import styled from "styled-components";
 import CoreBtns from "./corebtns";
 import CoreCompleteBtn from "./corecompletebtn";
+import { SelectedRole } from "../recoil/Atoms";
+import { useRecoilValue } from "recoil";
 
 const CoreSelection = () => {
+  const Role = useRecoilValue(SelectedRole);
+
   return (
-    <Core>
-      <CoreSubs>강화할 코어를 전부 골라골라라</CoreSubs>
-      <CoreBtns/>
-      <CoreCompleteBtn/>
-    </Core>
+    <>
+      {Role ? (
+        <Core>
+          <CoreSubs>강화할 코어를 전부 골라골라라</CoreSubs>
+          <CoreBtns/>
+          <CoreCompleteBtn/>
+        </Core>
+      )
+      :
+        <></>
+      }
+    </>
   );
 }
 

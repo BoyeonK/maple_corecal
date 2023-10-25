@@ -1,10 +1,19 @@
 import styled from "styled-components";
+import { SelectedRole } from "../recoil/Atoms";
+import { useRecoilValue } from "recoil";
 
 const BlockQt = () => {
+  const Role = useRecoilValue(SelectedRole);
+
   return (
     <Block>
       <ColorBlock/>
-      아무노래나일단틀어
+      {
+        Role ? 
+        <SubsBlock>2. 강화할 코어를 모두 골라 주세요.</SubsBlock>
+        :
+        <SubsBlock>1. 캐릭터의 직업을 골라 주세요.</SubsBlock>
+      }
     </Block>
   );
 }
@@ -20,6 +29,11 @@ const ColorBlock = styled.div`
   width: 10px;
   margin-right: 10px;
   background: #9d9d9d;
+`
+
+const SubsBlock = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 export default BlockQt;

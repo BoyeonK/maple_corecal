@@ -1,28 +1,32 @@
-import { useState } from 'react';
 import styled from 'styled-components';
+import { useState } from 'react';
+import { SelectedRole } from "../recoil/Atoms";
+import { useSetRecoilState } from 'recoil';
 
 // 샘플 데이터
-const options = [
-  'Option 1',
-  'Option 2',
-  'Option 3',
-  'Option 4',
+const jobs = [
+  '칼리',
+  '불독',
+  '아란',
+  '메카닉',
   'Option 5',
 ];
 
 const RoleComboBox = () => {
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [selectedJob, setSelectedJob] = useState(jobs[0]);
+  const setRole = useSetRecoilState(SelectedRole);
 
   const handleSelectChange = (e) => {
-    setSelectedOption(e.target.value);
+    setSelectedJob(e.target.value);
+    setRole(e.target.value);
   };
 
   return (
     <ComboBoxContainer>
-      <Select value={selectedOption} onChange={handleSelectChange}>
-        {options.map((option, index) => (
-          <option key={index} value={option}>
-            {option}
+      <Select value={selectedJob} onChange={handleSelectChange}>
+        {jobs.map((job, i) => (
+          <option key={i} value={job}>
+            {job}
           </option>
         ))}
       </Select>

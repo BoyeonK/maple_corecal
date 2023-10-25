@@ -4,7 +4,7 @@ import RoleComboBox from "./rolecombo";
 const RoleSelection = () => {
   return (
     <Role>
-      <Rtitle>센따꾸시로요</Rtitle>
+      <Rtitle>직업 선택</Rtitle>
       <RoleComboBox/>
     </Role>
   );
