@@ -33,14 +33,14 @@ const RoleComboBox = () => {
 const ComboBoxContainer = styled.div`
   position: relative;
   display: inline-block;
+  border-bottom: 1px solid #ccc;
   width: 450px;
 `;
 
 const Select = styled.select`
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 0px;
   background-color: #fff;
   outline: none;
   cursor: pointer;
