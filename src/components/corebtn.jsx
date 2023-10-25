@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const CoreBtn = () => {
+const CoreBtn = (props) => {
   return (
     <CoreBtnDiv>
       <CoreToggle>
-        코어 이름이 하나씩 들어갈것이여
+        {props.value}
       </CoreToggle>
     </CoreBtnDiv>
   );

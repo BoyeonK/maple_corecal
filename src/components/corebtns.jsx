@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import CoreBtn from "./corebtn";
+import { SelectedRole } from "../recoil/Atoms";
+import { useRecoilValue } from "recoil";
+import cores from "../cores/cores"
 
 const CoreBtns = () => {
+  const Role = useRecoilValue(SelectedRole);
+  const lis = cores[Role].sname;
+
   return (
     <CoreBtnsDiv>
-      <CoreBtn/>
-      <CoreBtn/>
-      <CoreBtn/>
-      <CoreBtn/>
-      <CoreBtn/>
-      <CoreBtn/>
-      <CoreBtn/>
+      {lis.map((value, index)=>(<CoreBtn key={index} value={value}></CoreBtn>))}
     </CoreBtnsDiv>
   );
 }

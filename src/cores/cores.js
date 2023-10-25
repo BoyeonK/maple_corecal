@@ -20,3 +20,5 @@ const cores = {
     smodi: [],
   },
 }
+
+export default cores;
