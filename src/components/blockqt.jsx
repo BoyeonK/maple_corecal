@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const blockQt = () => {
+const BlockQt = () => {
   return (
     <Block>
       <ColorBlock/>
@@ -22,4 +22,4 @@ const ColorBlock = styled.div`
   background: #9d9d9d;
 `
 
-export default blockQt;
+export default BlockQt;

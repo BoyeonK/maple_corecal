@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const roleSelection = () => {
+const RoleSelection = () => {
   return (
     <Role>
       <Rtitle>센따꾸시로요</Rtitle>
@@ -20,4 +20,4 @@ const Rtitle = styled.span`
   width: 150px;
 `
 
-export default roleSelection;
+export default RoleSelection;
