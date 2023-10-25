@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 const Header = () => {
   return (
-    <HeaderContents>
+    <HeaderContent>
       <HeaderTap>강화할 코어</HeaderTap>
       <HeaderTap>내 코어</HeaderTap>
-    </HeaderContents>
+    </HeaderContent>
   );
 }
 
-const HeaderContents = styled.div`
+const HeaderContent = styled.div`
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 50px;
   background: white;
   color: black;
   padding-left: 20px;
