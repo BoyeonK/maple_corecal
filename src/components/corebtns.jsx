@@ -1,16 +1,23 @@
 import styled from "styled-components";
+import CoreBtn from "./corebtn";
 
 const CoreBtns = () => {
   return (
     <CoreBtnsDiv>
-      해롱이는해롱해롱
+      <CoreBtn/>
+      <CoreBtn/>
+      <CoreBtn/>
+      <CoreBtn/>
+      <CoreBtn/>
+      <CoreBtn/>
+      <CoreBtn/>
     </CoreBtnsDiv>
   );
 }
 
 const CoreBtnsDiv = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   margin-top: 15px;
 `
 
