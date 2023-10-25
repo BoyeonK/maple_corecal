@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import CoreBtns from "./corebtns";
+import CoreCompleteBtn from "./corecompletebtn";
 
 const CoreSelection = () => {
   return (
     <Core>
       <CoreSubs>강화할 코어를 전부 골라골라라</CoreSubs>
       <CoreBtns/>
+      <CoreCompleteBtn/>
     </Core>
   );
 }
