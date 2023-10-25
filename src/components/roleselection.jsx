@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import RoleComboBox from "./rolecombo";
 
 const RoleSelection = () => {
   return (
     <Role>
       <Rtitle>센따꾸시로요</Rtitle>
+      <RoleComboBox/>
     </Role>
   );
 }
