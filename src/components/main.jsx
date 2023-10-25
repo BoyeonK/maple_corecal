@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import Blockqt from "./blockqt";
+import RoleSelection from "./roleselection";
 
 const Main = () => {
   return (
     <MainContent>
       <Blockqt/>
+      <RoleSelection/>
     </MainContent>
   );
 }
