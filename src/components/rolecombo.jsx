@@ -10,7 +10,7 @@ const options = [
   'Option 5',
 ];
 
-const ComboBox = () => {
+const RoleComboBox = () => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const handleSelectChange = (e) => {
@@ -46,4 +46,4 @@ const Select = styled.select`
   cursor: pointer;
 `;
 
-export default ComboBox;
+export default RoleComboBox;
