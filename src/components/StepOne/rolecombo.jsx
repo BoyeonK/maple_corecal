@@ -13,7 +13,7 @@ const jobs = [
 ];
 
 const RoleComboBox = () => {
-  const [selectedJob, setSelectedJob] = useState(jobs[0]);
+  const [selectedJob, setSelectedJob] = useState(jobs[1]);
   const setRole = useSetRecoilState(SelectedRole);
 
   const handleSelectChange = (e) => {

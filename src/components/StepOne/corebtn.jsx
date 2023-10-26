@@ -1,9 +1,16 @@
 import styled from "styled-components";
+import { useState } from 'react';
 
 const CoreBtn = (props) => {
+  const [toggle, setToggle] = useState(false);
+  const cb = () => {
+    if (toggle) setToggle(false)
+    else setToggle(true)
+  }
+
   return (
     <CoreBtnDiv>
-      <CoreToggle>
+      <CoreToggle toggle={toggle} onClick={cb}>
         {props.value}
       </CoreToggle>
     </CoreBtnDiv>
@@ -21,9 +28,10 @@ const CoreToggle = styled.div`
   align-items: center;
   width: 280px;
   height: 46px;
-  margin: 7px auto;
-  background: #ccc;
+  margin: ${(props) => (props.toggle) ? '9px 12px 8px' : '7px auto'};
+  background: ${(props) => (props.toggle) ? '#909090' : '#ccc'};
   border-radius: 5px;
+  cursor: pointer;
 `
 
 export default CoreBtn;
