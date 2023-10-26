@@ -1,16 +1,19 @@
 import styled from "styled-components";
-import { useState } from 'react';
+import { useRecoilState } from "recoil";
+import { SelectedCores } from "../../recoil/Atoms";
 
 const CoreBtn = (props) => {
-  const [toggle, setToggle] = useState(false);
-  const cb = () => {
-    if (toggle) setToggle(false)
-    else setToggle(true)
+  const [cores, setCores] = useRecoilState(SelectedCores);
+  const clk = () => {
+    const cix = props.index;
+    const nlist = [...cores];
+    nlist[cix] = (nlist[cix]) ? false : true;
+    setCores(nlist);
   }
 
   return (
     <CoreBtnDiv>
-      <CoreToggle toggle={toggle} onClick={cb}>
+      <CoreToggle toggle={cores[props.index]} onClick={clk}>
         {props.value}
       </CoreToggle>
     </CoreBtnDiv>
