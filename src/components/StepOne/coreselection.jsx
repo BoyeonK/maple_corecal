@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import CoreBtns from "./corebtns";
 import CoreCompleteBtn from "./corecompletebtn";
-import { SelectedRole } from "../recoil/Atoms";
+import { SelectedRole } from "../../recoil/Atoms";
 import { useRecoilValue } from "recoil";
 
 const CoreSelection = () => {

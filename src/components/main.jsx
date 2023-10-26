@@ -1,14 +1,10 @@
 import styled from "styled-components";
-import BlockQt from "./blockqt";
-import RoleSelection from "./roleselection";
-import CoreSelection from "./coreselection";
+import StepOne from "./stepone";
 
 const Main = () => {
   return (
     <MainContent>
-      <BlockQt/>
-      <RoleSelection/>
-      <CoreSelection/>
+      <StepOne/>
     </MainContent>
   );
 }

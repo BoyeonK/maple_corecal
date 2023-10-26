@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import { SelectedRole } from "../recoil/Atoms";
+import { SelectedRole } from "../../recoil/Atoms";
 import { useSetRecoilState } from 'recoil';
 
 // 샘플 데이터

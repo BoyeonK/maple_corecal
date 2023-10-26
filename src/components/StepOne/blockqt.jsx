@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SelectedRole } from "../recoil/Atoms";
+import { SelectedRole } from "../../recoil/Atoms";
 import { useRecoilValue } from "recoil";
 
 const BlockQt = () => {

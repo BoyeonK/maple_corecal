@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import CoreBtn from "./corebtn";
-import { SelectedRole } from "../recoil/Atoms";
+import { SelectedRole } from "../../recoil/Atoms";
 import { useRecoilValue } from "recoil";
-import cores from "../cores/cores"
+import cores from "../../cores/cores"
 
 const CoreBtns = () => {
   const Role = useRecoilValue(SelectedRole);
