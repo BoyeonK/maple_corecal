@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import { SelectedRole } from "../../recoil/Atoms";
 import { useSetRecoilState } from 'recoil';
+import { SelectedRole } from "../../recoil/Atoms";
+import { SelectedCores } from "../../recoil/Atoms";
 
-// 샘플 데이터
 const jobs = [
   '칼리',
   '불독',
@@ -14,11 +14,13 @@ const jobs = [
 
 const RoleComboBox = () => {
   const [selectedJob, setSelectedJob] = useState(jobs[1]);
+  const setCores = useSetRecoilState(SelectedCores);
   const setRole = useSetRecoilState(SelectedRole);
-
+  
   const handleSelectChange = (e) => {
     setSelectedJob(e.target.value);
     setRole(e.target.value);
+    setCores([false, false, false, false, false, false, false, false, false, false]);
   };
 
   return (

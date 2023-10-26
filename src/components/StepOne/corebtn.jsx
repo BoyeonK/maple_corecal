@@ -4,16 +4,16 @@ import { SelectedCores } from "../../recoil/Atoms";
 
 const CoreBtn = (props) => {
   const [cores, setCores] = useRecoilState(SelectedCores);
-  const clk = () => {
-    const cix = props.index;
-    const nlist = [...cores];
-    nlist[cix] = (nlist[cix]) ? false : true;
-    setCores(nlist);
+  const tClick = () => {
+    const ci = props.index;
+    const nList = [...cores];
+    nList[ci] = (nList[ci]) ? false : true;
+    setCores(nList);
   }
 
   return (
     <CoreBtnDiv>
-      <CoreToggle toggle={cores[props.index]} onClick={clk}>
+      <CoreToggle toggle={cores[props.index]} onClick={tClick}>
         {props.value}
       </CoreToggle>
     </CoreBtnDiv>
