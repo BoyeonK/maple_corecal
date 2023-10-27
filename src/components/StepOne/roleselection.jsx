@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import RoleComboBox from "./rolecombo";
 
-const RoleSelection = () => {
-  return (
-    <Role>
-      <Rtitle>직업 선택</Rtitle>
-      <RoleComboBox/>
-    </Role>
-  );
-}
+const RoleSelection = () => (
+  <Role>
+    <Rtitle>직업 선택</Rtitle>
+    <RoleComboBox/>
+  </Role>
+);
 
 const Role = styled.div`
   display: flex;

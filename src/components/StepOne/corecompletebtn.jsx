@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
-const CoreCompleteBtn = () => {
-  return (
-    <CoreBtnDiv>
-      <CoreToggle>
-        선택 완료
-      </CoreToggle>
-    </CoreBtnDiv>
-  );
-}
+const CoreCompleteBtn = () => (
+  <CoreBtnDiv>
+    <CoreToggle>
+      선택 완료
+    </CoreToggle>
+  </CoreBtnDiv>
+);
 
 const CoreBtnDiv = styled.div`
   width: 100%;

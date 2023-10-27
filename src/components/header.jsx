@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
-const Header = () => {
-  return (
-    <HeaderContent>
-      <HeaderTap>강화할 코어</HeaderTap>
-      <HeaderTap>내 코어</HeaderTap>
-    </HeaderContent>
-  );
-}
+const Header = () => (
+  <HeaderContent>
+    <HeaderTap>강화할 코어</HeaderTap>
+    <HeaderTap>내 코어</HeaderTap>
+  </HeaderContent>
+);
 
 const HeaderContent = styled.div`
   display: flex;

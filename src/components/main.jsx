@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import StepOne from "./stepone";
 
-const Main = () => {
-  return (
-    <MainContent>
-      <StepOne/>
-    </MainContent>
-  );
-}
+const Main = () => (
+  <MainContent>
+    <StepOne/>
+  </MainContent>
+);
 
 const MainContent = styled.div`
   width: 600px;
