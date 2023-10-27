@@ -9,3 +9,8 @@ export const SelectedCores = atom({
   key: "SelectedCores",
   default: [true, false, false, false, false, false, false, false, false, false],
 })
+
+export const StepT = atom({
+  key: "StepT",
+  default: false,
+})

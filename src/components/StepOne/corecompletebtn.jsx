@@ -1,27 +1,24 @@
 import styled from "styled-components";
 import { useRecoilValue } from "recoil";
-import { SelectedCores } from "../../recoil/Atoms";
-
 import { useSetRecoilState } from "recoil";
+import { SelectedCores } from "../../recoil/Atoms";
+import { StepT } from "../../recoil/Atoms";
 
 const CoreCompleteBtn = () => {
   const cores = useRecoilValue(SelectedCores);
-  const testtt = useSetRecoilState(SelectedCores)
-  const test = false;
+  const setStepT = useSetRecoilState(StepT);
   const cClick = () => {
     let i = 0;
     cores.forEach((e) => { if(e) i += 1; })
-    if (i>2) {
-      testtt([true, true, true, true, true, true, true, true, true, true]);
-    }
+    if (i>2) setStepT(true);
     else {
-      testtt([false,false,false,false,false,false,false,false,false,false,]);
+      //에러 alert창 표시 예정
     }
   }
 
   return (
     <CoreBtnDiv>
-      <CoreToggle test={test} onClick={cClick}>
+      <CoreToggle onClick={cClick}>
         선택 완료
       </CoreToggle>
     </CoreBtnDiv>
@@ -39,7 +36,7 @@ const CoreToggle = styled.div`
   align-items: center;
   width: 500px;
   height: 50px;
-  margin: ${(props) => (props.test) ? '9px 12px 8px' : 'auto'};
+  margin: auto;
   background: #ccc;
   border-radius: 5px;
   cursor: pointer;
