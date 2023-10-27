@@ -1,11 +1,18 @@
 import styled from "styled-components";
 import StepOne from "./stepone";
+import StepTwo from "./steptwo";
+import { useRecoilValue } from "recoil";
+import { StepT } from "../recoil/Atoms";
 
-const Main = () => (
-  <MainContent>
-    <StepOne/>
-  </MainContent>
-);
+const Main = () => {
+  const stepT = useRecoilValue(StepT);
+
+  return (
+    <MainContent>
+      {(stepT) ? <StepTwo/> : <StepOne/>}
+    </MainContent>
+  )
+};
 
 const MainContent = styled.div`
   width: 600px;
