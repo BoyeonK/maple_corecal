@@ -15,7 +15,7 @@ const Main = () => {
 }
 
 const MainContent = styled.div`
-  width: 600px;
+  width: 620px;
   margin: 0 auto;
 `
   
