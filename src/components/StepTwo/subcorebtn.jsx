@@ -9,7 +9,23 @@ const SubCoreBtn = (props) => {
     const ci = props.index
     const nList = [...cores]
     nList[ci] = (nList[ci]) ? false : true
-    setCores(nList)
+    
+
+    let t=0
+    let subcores = []
+    for (let i=0; i<nList.length; i++) {
+      if (nList[i]) {
+        t+=1
+        subcores.push(i)
+      }
+    }
+    if (t>=2) {
+      console.log(Ti)
+      console.log(subcores)
+      setCores([false,false,false,false,false,false,false,false,false,false,])
+    } else {
+      setCores(nList)
+    }
   }
 
   return (
