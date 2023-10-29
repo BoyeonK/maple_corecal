@@ -1,11 +1,8 @@
 import styled from 'styled-components'
 import { useState } from 'react'
-import { useRecoilValue } from 'recoil'
-import { SelectedCores } from '../../recoil/Atoms'
 
 const CoreComboBox = (props) => {
   const [selectedCore, setSelectedCore] = useState('')
-  const selectedCores = useRecoilValue(SelectedCores)
   const handleSelectChange = (e) => {
     setSelectedCore(e.target.value)
   }
@@ -14,9 +11,9 @@ const CoreComboBox = (props) => {
     <ComboBoxContainer>
       <Select value={selectedCore} onChange={handleSelectChange}>
         {props.cores.map((core, i) => (
-          <Option key={i} value={core} selected={selectedCores[i]}>
+          <option key={i} value={core}>
             {core}
-          </Option>
+          </option>
         ))}
       </Select>
     </ComboBoxContainer>
@@ -39,7 +36,4 @@ const Select = styled.select`
   cursor: pointer;
 `;
 
-const Option = styled.option`
-  ${(props) => (props.selected) ? '' : 'display: none;'}
-`
 export default CoreComboBox
