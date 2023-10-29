@@ -25,6 +25,11 @@ export const TCores = atom({
   default: [],
 })
 
+export const SCores = atom({
+  key: "SCores",
+  default: [],
+})
+
 export const TIndex = atom({
   key: "TIndex",
   default: 0,

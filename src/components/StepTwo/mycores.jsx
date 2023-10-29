@@ -1,11 +1,18 @@
 import styled from "styled-components"
+import MyCore from "./mycore"
 
 const MyCores = () => {
+  //const CC = [[[1,2], [2,3]], [[0,2]]]
+
   return (
     <MyCoresDiv>
       <MyCoresTitle>
         내 코어
       </MyCoresTitle>
+      <MyCoresContent>
+        <MyCore/>
+        <MyCore/>
+      </MyCoresContent>
     </MyCoresDiv>
   )
 }
@@ -22,8 +29,12 @@ const MyCoresTitle = styled.div`
   align-items: center;
   width: 560px;
   height: 40px;
-  margin: 5px auto 20px;
+  margin: 5px auto;
   border-bottom: 1px solid #ccc;
+`
+
+const MyCoresContent = styled.div`
+  margin: 0 0 15px;
 `
 
 export default MyCores

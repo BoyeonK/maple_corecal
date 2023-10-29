@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 import { useState } from 'react'
 import { useSetRecoilState } from 'recoil'
-import { SelectedRole } from "../../recoil/Atoms"
-import { CoreList } from '../../recoil/Atoms'
-import { SelectedCores } from "../../recoil/Atoms"
+import { SelectedRole, CoreList, SelectedCores, SCores} from "../../recoil/Atoms"
 import cores from '../../cores/cores'
 
 const jobs = [
@@ -17,12 +15,14 @@ const jobs = [
 const RoleComboBox = () => {
   const [selectedJob, setSelectedJob] = useState(jobs[1])
   const setCores = useSetRecoilState(SelectedCores)
-  const setCoreList = useSetRecoilState(CoreList)
   const setRole = useSetRecoilState(SelectedRole)
+  const setCoreList = useSetRecoilState(CoreList)
+  const setSCores = useSetRecoilState(SCores)
   
   const handleSelectChange = (e) => {
     setSelectedJob(e.target.value)
     setCoreList(cores[e.target.value].sname)
+    setSCores(cores[e.target.value].smodi)
     setRole(e.target.value)
     setCores([false, false, false, false, false, false, false, false, false, false])
   }
