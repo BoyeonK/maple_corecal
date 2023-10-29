@@ -2,8 +2,6 @@ import styled from "styled-components"
 import MyCore from "./mycore"
 
 const MyCores = () => {
-  //const CC = [[[1,2], [2,3]], [[0,2]]]
-
   return (
     <MyCoresDiv>
       <MyCoresTitle>

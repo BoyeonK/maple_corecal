@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-const MyCore = () => {
+const MyCore = (props) => {
   return (
     <MyCoreDiv>
-      러쉬와 헥스의 데스블로섬
+      빵빵과 땡땡의 딱딱딱딱
     </MyCoreDiv>
   )
 }
