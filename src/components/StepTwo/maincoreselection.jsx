@@ -8,7 +8,7 @@ const MainCoreSelection = () => {
   
   return (
     <Role>
-      <Rtitle>메인 코어 선택</Rtitle>
+      <Rtitle>메인 스킬 선택</Rtitle>
       <CoreComboBox cores={cores}/>
     </Role>
   )
