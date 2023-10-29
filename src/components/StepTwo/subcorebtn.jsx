@@ -6,7 +6,7 @@ const SubCoreBtn = (props) => {
   const Ti = useRecoilValue(TIndex)
 
   return (
-    (Ti==props.index) ?
+    (Ti===props.index) ?
     <></>
     :
     <CoreBtnDiv>
@@ -31,6 +31,7 @@ const CoreToggle = styled.div`
   background: #ccc;
   border-radius: 5px;
   cursor: pointer;
+  margin: 4px auto;
   font-size: 12px;
 `
 
