@@ -1,11 +1,9 @@
 import styled from "styled-components"
-import { useRecoilValue } from "recoil"
-import { useSetRecoilState } from "recoil"
-import { SelectedCores, CoreList, TCores } from "../../recoil/Atoms"
-import { StepT } from "../../recoil/Atoms"
+import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil"
+import { SelectedCores, StepT, CoreList, TCores } from "../../recoil/Atoms"
 
 const CoreCompleteBtn = () => {
-  const cores = useRecoilValue(SelectedCores)
+  const [cores, setSelectedCores] = useRecoilState(SelectedCores)
   const corelist = useRecoilValue(CoreList)
   const setStepT = useSetRecoilState(StepT)
   const setTCores = useSetRecoilState(TCores)
@@ -21,6 +19,7 @@ const CoreCompleteBtn = () => {
     if (t>2) {
       setTCores(tc)
       setStepT(true)
+      setSelectedCores([false,false,false,false,false,false,false,false,false,false,])
     }
     else {
       //에러 alert창 표시 예정

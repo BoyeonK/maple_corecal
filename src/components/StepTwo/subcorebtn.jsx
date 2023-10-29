@@ -1,16 +1,23 @@
 import styled from "styled-components"
-import { useRecoilValue } from "recoil"
-import { TIndex } from "../../recoil/Atoms"
+import { useRecoilValue, useRecoilState } from "recoil"
+import { TIndex, SelectedCores } from "../../recoil/Atoms"
 
 const SubCoreBtn = (props) => {
   const Ti = useRecoilValue(TIndex)
+  const [cores, setCores] = useRecoilState(SelectedCores)
+  const tClick = () => {
+    const ci = props.index
+    const nList = [...cores]
+    nList[ci] = (nList[ci]) ? false : true
+    setCores(nList)
+  }
 
   return (
     (Ti===props.index) ?
     <></>
     :
     <CoreBtnDiv>
-      <CoreToggle>
+      <CoreToggle ts={cores[props.index]} onClick={tClick}>
         {props.value}
       </CoreToggle>
     </CoreBtnDiv>
@@ -28,7 +35,7 @@ const CoreToggle = styled.div`
   align-items: center;
   width: 190px;
   height: 32px;
-  background: #ccc;
+  background: ${(props) => (props.ts) ? '#909090' : '#ccc'};
   border-radius: 5px;
   cursor: pointer;
   margin: 4px auto;
