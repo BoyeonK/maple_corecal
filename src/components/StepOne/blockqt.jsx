@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { SelectedRole } from "../../recoil/Atoms";
-import { useRecoilValue } from "recoil";
+import styled from "styled-components"
+import { SelectedRole } from "../../recoil/Atoms"
+import { useRecoilValue } from "recoil"
 
 const BlockQt = () => {
-  const Role = useRecoilValue(SelectedRole);
+  const Role = useRecoilValue(SelectedRole)
 
   return (
     <Block>
@@ -15,7 +15,7 @@ const BlockQt = () => {
         <SubsBlock>1. 캐릭터의 직업을 골라 주세요.</SubsBlock>
       }
     </Block>
-  );
+  )
 }
 
 const Block = styled.div`
@@ -36,4 +36,4 @@ const SubsBlock = styled.div`
   align-items: center;
 `
 
-export default BlockQt;
+export default BlockQt

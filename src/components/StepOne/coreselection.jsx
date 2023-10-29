@@ -1,26 +1,25 @@
-import styled from "styled-components";
-import CoreBtns from "./corebtns";
-import CoreCompleteBtn from "./corecompletebtn";
-import { SelectedRole } from "../../recoil/Atoms";
-import { useRecoilValue } from "recoil";
+import styled from "styled-components"
+import CoreBtns from "./corebtns"
+import CoreCompleteBtn from "./corecompletebtn"
+import { SelectedRole } from "../../recoil/Atoms"
+import { useRecoilValue } from "recoil"
 
 const CoreSelection = () => {
-  const Role = useRecoilValue(SelectedRole);
+  const Role = useRecoilValue(SelectedRole)
 
   return (
     <>
-      {Role ? (
+      {Role ? 
         <Core>
           <CoreSubs>강화할 코어를 모두 선택하세요</CoreSubs>
           <CoreBtns/>
           <CoreCompleteBtn/>
         </Core>
-      )
       :
         <></>
       }
     </>
-  );
+  )
 }
 
 const Core = styled.div`
@@ -35,4 +34,4 @@ const CoreSubs = styled.div`
   height: 30px;
 `
 
-export default CoreSelection;
+export default CoreSelection

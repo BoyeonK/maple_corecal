@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Header from './components/header'
 import Main from './components/main'
-import './App.css';
+import './App.css'
 
 function App() {
   return (
@@ -17,4 +17,4 @@ const Wrapper = styled.div`
   font-family: "NexonGothic";
 `
 
-export default App;
+export default App

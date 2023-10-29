@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Header = () => (
   <HeaderContent>
     <HeaderTap>강화할 코어</HeaderTap>
     <HeaderTap>내 코어</HeaderTap>
   </HeaderContent>
-);
+)
 
 const HeaderContent = styled.div`
   display: flex;
@@ -25,4 +25,4 @@ const HeaderTap = styled.div`
   width: 200px;
 `
   
-export default Header;
+export default Header

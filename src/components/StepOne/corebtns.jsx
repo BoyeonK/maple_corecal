@@ -1,18 +1,18 @@
-import styled from "styled-components";
-import CoreBtn from "./corebtn";
-import { SelectedRole } from "../../recoil/Atoms";
-import { useRecoilValue } from "recoil";
+import styled from "styled-components"
+import CoreBtn from "./corebtn"
+import { SelectedRole } from "../../recoil/Atoms"
+import { useRecoilValue } from "recoil"
 import cores from "../../cores/cores"
 
 const CoreBtns = () => {
-  const Role = useRecoilValue(SelectedRole);
-  const lis = cores[Role].sname;
+  const Role = useRecoilValue(SelectedRole)
+  const lis = cores[Role].sname
 
   return (
     <CoreBtnsDiv>
       {lis.map((value, index) => (<CoreBtn index={index} value={value}/>))}
     </CoreBtnsDiv>
-  );
+  )
 }
 
 const CoreBtnsDiv = styled.div`
@@ -21,4 +21,4 @@ const CoreBtnsDiv = styled.div`
   margin-top: 15px;
 `
 
-export default CoreBtns;
+export default CoreBtns

@@ -21,4 +21,4 @@ const cores = {
   },
 }
 
-export default cores;
+export default cores

@@ -1,6 +1,6 @@
-import BlockQt from "./StepOne/blockqt";
-import RoleSelection from "./StepOne/roleselection";
-import CoreSelection from "./StepOne/coreselection";
+import BlockQt from "./StepOne/blockqt"
+import RoleSelection from "./StepOne/roleselection"
+import CoreSelection from "./StepOne/coreselection"
 
 const StepOne = () => (
   <>
@@ -8,7 +8,7 @@ const StepOne = () => (
     <RoleSelection/>
     <CoreSelection/>
   </>
-);
+)
 
   
-export default StepOne;
+export default StepOne

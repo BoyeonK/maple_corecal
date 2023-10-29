@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const BlockQt = () => (
   <Block>
@@ -8,7 +8,7 @@ const BlockQt = () => (
         유효코어의 메인 스킬을 고르고 서브스킬 2개를 클릭하면 추가됩니다.
       </SubsBlock>
   </Block>
-);
+)
 
 
 const Block = styled.div`
@@ -29,4 +29,4 @@ const SubsBlock = styled.div`
   align-items: center;
 `
 
-export default BlockQt;
+export default BlockQt

@@ -1,16 +1,16 @@
-import styled from "styled-components";
-import { useRecoilValue } from "recoil";
-import { useSetRecoilState } from "recoil";
-import { SelectedCores } from "../../recoil/Atoms";
-import { StepT } from "../../recoil/Atoms";
+import styled from "styled-components"
+import { useRecoilValue } from "recoil"
+import { useSetRecoilState } from "recoil"
+import { SelectedCores } from "../../recoil/Atoms"
+import { StepT } from "../../recoil/Atoms"
 
 const CoreCompleteBtn = () => {
-  const cores = useRecoilValue(SelectedCores);
-  const setStepT = useSetRecoilState(StepT);
+  const cores = useRecoilValue(SelectedCores)
+  const setStepT = useSetRecoilState(StepT)
   const cClick = () => {
-    let i = 0;
+    let i = 0
     cores.forEach((e) => { if(e) i += 1; })
-    if (i>2) setStepT(true);
+    if (i>2) setStepT(true)
     else {
       //에러 alert창 표시 예정
     }
@@ -23,7 +23,7 @@ const CoreCompleteBtn = () => {
       </CoreToggle>
     </CoreBtnDiv>
   )
-};
+}
 
 const CoreBtnDiv = styled.div`
   width: 100%;
@@ -42,4 +42,4 @@ const CoreToggle = styled.div`
   cursor: pointer;
 `
 
-export default CoreCompleteBtn;
+export default CoreCompleteBtn

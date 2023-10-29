@@ -1,14 +1,14 @@
-import styled from "styled-components";
-import { useRecoilState } from "recoil";
-import { SelectedCores } from "../../recoil/Atoms";
+import styled from "styled-components"
+import { useRecoilState } from "recoil"
+import { SelectedCores } from "../../recoil/Atoms"
 
 const CoreBtn = (props) => {
-  const [cores, setCores] = useRecoilState(SelectedCores);
+  const [cores, setCores] = useRecoilState(SelectedCores)
   const tClick = () => {
-    const ci = props.index;
-    const nList = [...cores];
-    nList[ci] = (nList[ci]) ? false : true;
-    setCores(nList);
+    const ci = props.index
+    const nList = [...cores]
+    nList[ci] = (nList[ci]) ? false : true
+    setCores(nList)
   }
 
   return (
@@ -17,7 +17,7 @@ const CoreBtn = (props) => {
         {props.value}
       </CoreToggle>
     </CoreBtnDiv>
-  );
+  )
 }
 
 const CoreBtnDiv = styled.div`
@@ -37,4 +37,4 @@ const CoreToggle = styled.div`
   cursor: pointer;
 `
 
-export default CoreBtn;
+export default CoreBtn
