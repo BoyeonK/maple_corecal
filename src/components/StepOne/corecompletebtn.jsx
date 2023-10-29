@@ -9,7 +9,7 @@ const CoreCompleteBtn = () => {
   const setStepT = useSetRecoilState(StepT)
   const cClick = () => {
     let i = 0
-    cores.forEach((e) => { if(e) i += 1; })
+    cores.forEach((e) => { if(e) i += 1 })
     if (i>2) setStepT(true)
     else {
       //에러 alert창 표시 예정

@@ -5,6 +5,11 @@ export const SelectedRole = atom({
   default: false,
 })
 
+export const CoreList = atom({
+  key: "CoreList",
+  default: [],
+})
+
 export const SelectedCores = atom({
   key: "SelectedCores",
   default: [false, false, false, false, false, false, false, false, false, false],

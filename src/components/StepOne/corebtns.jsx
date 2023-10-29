@@ -1,12 +1,10 @@
 import styled from "styled-components"
 import CoreBtn from "./corebtn"
-import { SelectedRole } from "../../recoil/Atoms"
+import { CoreList } from "../../recoil/Atoms"
 import { useRecoilValue } from "recoil"
-import cores from "../../cores/cores"
 
 const CoreBtns = () => {
-  const Role = useRecoilValue(SelectedRole)
-  const lis = cores[Role].sname
+  const lis = useRecoilValue(CoreList)
 
   return (
     <CoreBtnsDiv>
