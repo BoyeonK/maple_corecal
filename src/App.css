@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "NexonGothic";
+  src: url("./fonts/NEXONLv1GothicRegular.ttf");
+}
+
+@font-face {
+    font-family: "NexonBold";
+    src: url("./fonts/NEXONLv1GothicBold.ttf");
+  }

@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled from "styled-components"
 import Header from './components/header'
 import Main from './components/main'
+import './App.css';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
 const Wrapper = styled.div`
   min-width: 620px;
+  font-family: "NexonGothic";
 `
 
 export default App;
