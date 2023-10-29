@@ -11,7 +11,7 @@ const MyCores = () => {
 }
 
 const MyCoresDiv = styled.div`
-  width: 100%;
+  width: 600px;
   margin: 35px 10px 10px;
   border-radius: 5px;
   border: 2px solid #ccc;
@@ -20,7 +20,7 @@ const MyCoresDiv = styled.div`
 const MyCoresTitle = styled.div`
   display: flex;
   align-items: center;
-  width: 580px;
+  width: 560px;
   height: 40px;
   margin: 5px auto 20px;
   border-bottom: 1px solid #ccc;
