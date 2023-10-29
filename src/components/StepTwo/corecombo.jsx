@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 import { useState } from 'react'
+import { useSetRecoilState } from 'recoil'
+import { TIndex } from '../../recoil/Atoms'
 
 const CoreComboBox = (props) => {
   const [selectedCore, setSelectedCore] = useState('')
+  const setTi = useSetRecoilState(TIndex)
   const handleSelectChange = (e) => {
     setSelectedCore(e.target.value)
+    setTi(e.target.selectedIndex)
   }
 
   return (

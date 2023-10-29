@@ -22,5 +22,10 @@ export const StepT = atom({
 
 export const TCores = atom({
   key: "TCores",
-  default: ['어머같은996', '돌릴거면 저거샀음 안돼', '어차피 금방뜨지않아 30퍼', '이거 레큐4개먹음', '재훈 이거 직작임'],
+  default: [],
+})
+
+export const TIndex = atom({
+  key: "TIndex",
+  default: 0,
 })
