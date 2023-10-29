@@ -8,7 +8,7 @@ const CoreBtns = () => {
 
   return (
     <CoreBtnsDiv>
-      {lis.map((value, index) => (<CoreBtn index={index} value={value}/>))}
+      {lis.map((value, index) => (<CoreBtn key={index} index={index} value={value}/>))}
     </CoreBtnsDiv>
   )
 }

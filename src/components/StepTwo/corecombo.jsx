@@ -5,7 +5,7 @@ import { SelectedCores } from '../../recoil/Atoms'
 
 const CoreComboBox = (props) => {
   const [selectedCore, setSelectedCore] = useState('')
-  const SCores = useRecoilValue(SelectedCores)
+  const selectedCores = useRecoilValue(SelectedCores)
   const handleSelectChange = (e) => {
     setSelectedCore(e.target.value)
   }
@@ -14,12 +14,9 @@ const CoreComboBox = (props) => {
     <ComboBoxContainer>
       <Select value={selectedCore} onChange={handleSelectChange}>
         {props.cores.map((core, i) => (
-          (SCores[i])?
-            <option key={i} value={core}>
-              {core}
-            </option>
-          :
-            <></>
+          <Option key={i} value={core} selected={selectedCores[i]}>
+            {core}
+          </Option>
         ))}
       </Select>
     </ComboBoxContainer>
@@ -42,4 +39,7 @@ const Select = styled.select`
   cursor: pointer;
 `;
 
+const Option = styled.option`
+  ${(props) => (props.selected) ? '' : 'display: none;'}
+`
 export default CoreComboBox
