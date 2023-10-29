@@ -1,19 +1,25 @@
 import styled from 'styled-components'
 import { useState } from 'react'
+import { useRecoilValue } from 'recoil'
+import { SelectedCores } from '../../recoil/Atoms'
 
 const CoreComboBox = (props) => {
-  const [selectedJob, setSelectedJob] = useState(props.jobs[1])
+  const [selectedCore, setSelectedCore] = useState('')
+  const SCores = useRecoilValue(SelectedCores)
   const handleSelectChange = (e) => {
-    setSelectedJob(e.target.value)
+    setSelectedCore(e.target.value)
   }
 
   return (
     <ComboBoxContainer>
-      <Select value={selectedJob} onChange={handleSelectChange}>
-        {props.jobs.map((job, i) => (
-          <option key={i} value={job}>
-            {job}
-          </option>
+      <Select value={selectedCore} onChange={handleSelectChange}>
+        {props.cores.map((core, i) => (
+          (SCores[i])?
+            <option key={i} value={core}>
+              {core}
+            </option>
+          :
+            <></>
         ))}
       </Select>
     </ComboBoxContainer>

@@ -1,15 +1,15 @@
 import styled from "styled-components"
 import CoreComboBox from "./corecombo"
 import { useRecoilValue } from "recoil"
-import { TCores } from "../../recoil/Atoms"
+import { CoreList } from "../../recoil/Atoms"
 
 const MainCoreSelection = () => {
-  const cores = useRecoilValue(TCores);
+  const cores = useRecoilValue(CoreList);
   
   return (
     <Role>
       <Rtitle>메인 코어 선택</Rtitle>
-      <CoreComboBox jobs={cores}/>
+      <CoreComboBox cores={cores}/>
     </Role>
   )
 }
