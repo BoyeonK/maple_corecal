@@ -1,10 +1,14 @@
 import styled from "styled-components"
+import SubCoreBtn from "./subcorebtn"
+import { useRecoilValue } from "recoil"
+import { TCores } from "../../recoil/Atoms"
 
 const SubCoreBtns = () => {
+  const lis = useRecoilValue(TCores)
 
   return (
     <CoreBtnsDiv>
-      서브코어버튼이당
+      {lis.map((value, index) => (<SubCoreBtn key={index} index={index} value={value}/>))}
     </CoreBtnsDiv>
   )
 }

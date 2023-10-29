@@ -7,7 +7,7 @@ const SubCoreSelection = () => {
       <CoreSubs>
         <span>서브 스킬 선택 ( 택 2, 순서 상관 없음! )</span>
       </CoreSubs>
-      <SubCoreBtns></SubCoreBtns>
+      <SubCoreBtns/>
     </Core>
   )
 }
