@@ -1,10 +1,11 @@
 import styled from "styled-components"
 import { useRecoilValue, useRecoilState } from "recoil"
-import { TIndex, SelectedCores } from "../../recoil/Atoms"
+import { TIndex, SelectedCores, TC0 } from "../../recoil/Atoms"
 
 const SubCoreBtn = (props) => {
   const Ti = useRecoilValue(TIndex)
   const [cores, setCores] = useRecoilState(SelectedCores)
+  const [tc0, setTc0] = useRecoilState(TC0)
   const tClick = () => {
     const ci = props.index
     const nList = [...cores]
@@ -18,8 +19,12 @@ const SubCoreBtn = (props) => {
       }
     }
     if (t>=2) {
-      console.log(Ti)
-      console.log(subcores)
+      let jax = [...tc0]
+      let vex = [...tc0[Ti]]
+      vex.push(subcores)
+      jax[Ti] = vex
+      setTc0(jax)
+      // 중복검사 로직 필요
       setCores([false, false, false, false, false, false, false, false, false, false,])
     } else {
       setCores(nList)

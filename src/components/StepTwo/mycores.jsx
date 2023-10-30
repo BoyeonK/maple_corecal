@@ -1,15 +1,26 @@
 import styled from "styled-components"
 import MyCore from "./mycore"
+import { useRecoilValue } from "recoil"
+import { TCores, SCores, TC0 } from "../../recoil/Atoms"
 
 const MyCores = () => {
+  const sname = useRecoilValue(TCores)
+  const smodi = useRecoilValue(SCores)
+  const tc0 = useRecoilValue(TC0)
+
   return (
     <MyCoresDiv>
       <MyCoresTitle>
         내 코어
       </MyCoresTitle>
       <MyCoresContent>
-        <MyCore/>
-        <MyCore/>
+        {tc0.map((main, i) => (
+          <div key={i}>
+            {main.map((subs, j) => (
+              <MyCore key={j} first={smodi[subs[0]]} second={smodi[subs[1]]} main={sname[i]}/>
+            ))}
+          </div>
+        ))}
       </MyCoresContent>
     </MyCoresDiv>
   )

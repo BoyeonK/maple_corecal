@@ -3,7 +3,7 @@ import styled from "styled-components"
 const MyCore = (props) => {
   return (
     <MyCoreDiv>
-      빵빵과 땡땡의 딱딱딱딱
+      {props.first}와 {props.second}의 {props.main}
     </MyCoreDiv>
   )
 }
