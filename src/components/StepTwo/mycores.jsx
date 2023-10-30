@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import MyCore from "./mycore"
+import CoreCal from "./corecal"
 import { useRecoilValue } from "recoil"
 import { TCores, SCores, Inventory } from "../../recoil/Atoms"
 
@@ -12,6 +13,7 @@ const MyCores = () => {
     <MyCoresDiv>
       <MyCoresTitle>
         내 코어
+        <CoreCal></CoreCal>
       </MyCoresTitle>
       <MyCoresContent>
         {inventory.map((main, i) => (
@@ -36,6 +38,7 @@ const MyCoresDiv = styled.div`
 const MyCoresTitle = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 560px;
   height: 40px;
   margin: 5px auto;
