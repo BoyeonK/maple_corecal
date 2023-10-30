@@ -35,7 +35,7 @@ export const TIndex = atom({
   default: 0,
 })
 
-export const TC0 = atom({
-  key: "TC0",
+export const Inventory = atom({
+  key: "Inventory",
   default: [[],[],[],[],[],[],[],[],[],[],],
 })
