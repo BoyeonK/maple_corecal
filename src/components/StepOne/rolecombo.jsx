@@ -9,7 +9,7 @@ const jobs = [
   '불독',
   '아란',
   '메카닉',
-  'Option 5',
+  '윈드브레이커',
 ]
 
 const RoleComboBox = () => {
