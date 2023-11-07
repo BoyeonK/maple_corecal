@@ -9,6 +9,11 @@ const cores = {
     smodi: ['최후', '전투', '회전', '신성', '진격', '폭발', '심판', '성역', '강타'],
     dft: [true, false, false, true, false, true, true, true, true],
   },
+  '다크나이트': {
+    sname: ['파이널 어택', '스피어 풀링', '비홀더', '라만차 스피어', '리프어택/돌진/어퍼 차지', '궁니르 디센트', '다크 임페일', '다크 신서시스'],
+    smodi: ['최후', '인력', '충격', '창격', '진격', '마창', '어둠', '합일'],
+    dft: [true, false, true, false, true, true, true, true],
+  },
   '직업': {
     sname: [],
     smodi: [],
