@@ -5,11 +5,14 @@ import { SelectedRole, CoreList, SelectedCores, SCores} from "../../recoil/Atoms
 import cores from '../../cores/cores'
 
 const jobs = [
-  '칼리',
+  '히어로',
+  '팔라딘',
+  '다크나이트',
   '불독',
-  '아란',
-  '메카닉',
+  '썬콜',
+  '비숍',
   '윈드브레이커',
+  '칼리',
 ]
 
 const RoleComboBox = () => {
