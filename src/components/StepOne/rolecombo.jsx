@@ -13,6 +13,7 @@ const jobs = [
   '비숍',
   '윈드브레이커',
   '칼리',
+  '엔젤릭버스터',
 ]
 
 const RoleComboBox = () => {
