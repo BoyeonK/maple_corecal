@@ -15,6 +15,7 @@ const jobs = [
   '칼리',
   '엔젤릭버스터',
   '메르세데스',
+  '스트라이커'
 ]
 
 const RoleComboBox = () => {
