@@ -8,6 +8,7 @@ const GangHwa = () => {
   const [apiKey, setApiKey] = useState('')
   const [spiner, setspiner] = useState(false)
   const dataArray = []
+  let myhistory = {}
   
   const changeSValue = (e) => {
     setSValue(e.target.value)
@@ -21,10 +22,31 @@ const GangHwa = () => {
     setApiKey(e.target.value)
   }
 
+  const setHistory = (itemname) => {
+    if (myhistory[itemname] === undefined) {
+      myhistory[itemname] = 1
+    } else {
+      myhistory[itemname]++
+    }
+  }
+
   const DispatchJobQueue = () => {
     console.log(dataArray)
+    dataArray.forEach(e => {
+      e.starforce_history.forEach(e => {
+        //const sc = e.before_starforce_count
+        //const ct = (e.chance_time === "찬스타임 미적용") ? false : true
+        //const dd = (e.destroy_defence === "파괴 방지 미적용") ? false : true
+        //const up = e.upgrage_item
+        const itemname = e.target_item
+        setHistory(itemname)
+      })
+    })
     setspiner(false)
+    console.log(myhistory)
   }
+
+
 
   const callApi = async (stime, etime) => {
     if (stime > etime) { 
