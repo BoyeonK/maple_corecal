@@ -44,3 +44,8 @@ export const Inventory = atom({
   key: "Inventory",
   default: [[],[],[],[],[],[],[],[],[],[],],
 })
+
+export const UsedMesoByItem = atom({  
+  key: "UsedMesoByItem",
+  default: {},
+})

@@ -1,12 +1,16 @@
 import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { bossAcc, Routa, accquiredMeso } from "../cores/equips";
+import { useRecoilState } from "recoil";
+import { UsedMesoByItem } from "../recoil/Atoms";
 
 const GangHwa = () => {
   const [sValue, setSValue] = useState('')
   const [eValue, setEValue] = useState('')
   const [apiKey, setApiKey] = useState('')
   const [spiner, setspiner] = useState(false)
+  const [usedMesoByItem, setUsedMesoByItem] = useRecoilState(UsedMesoByItem)
   const dataArray = []
   let myhistory = {}
   
@@ -22,11 +26,30 @@ const GangHwa = () => {
     setApiKey(e.target.value)
   }
 
-  const setHistory = (itemname) => {
-    if (myhistory[itemname] === undefined) {
-      myhistory[itemname] = 1
+  const setHistory = (itemname, sc) => {
+    let itemLevelAcc
+    if (itemname.length < 4) return
+    const fname = itemname.substring(0, 4)
+    if (bossAcc[itemname] !== undefined) {
+      itemLevelAcc = bossAcc[itemname]
+    } else if (fname === "에테르넬") {
+      itemLevelAcc = 250
+    } else if (fname === "아케인셰") {
+      itemLevelAcc = 200
+    } else if (fname === "앱솔랩스") {
+      itemLevelAcc = 160
+    } else if (Routa.includes(fname)) {
+      itemLevelAcc = 150
     } else {
-      myhistory[itemname]++
+      return
+    }
+
+    const meso = accquiredMeso(itemLevelAcc, sc)
+
+    if (myhistory[itemname] === undefined) {
+      myhistory[itemname] = meso
+    } else {
+      myhistory[itemname] += meso
     }
   }
 
@@ -34,19 +57,18 @@ const GangHwa = () => {
     console.log(dataArray)
     dataArray.forEach(e => {
       e.starforce_history.forEach(e => {
-        //const sc = e.before_starforce_count
-        //const ct = (e.chance_time === "찬스타임 미적용") ? false : true
+        const sc = e.before_starforce_count
+        const ct = (e.chance_time === "찬스타임 미적용") ? false : true
         //const dd = (e.destroy_defence === "파괴 방지 미적용") ? false : true
         //const up = e.upgrage_item
         const itemname = e.target_item
-        setHistory(itemname)
+        setHistory(itemname, sc, ct)
       })
     })
     setspiner(false)
+    setUsedMesoByItem(myhistory)
     console.log(myhistory)
   }
-
-
 
   const callApi = async (stime, etime) => {
     if (stime > etime) { 
@@ -147,6 +169,14 @@ const GangHwa = () => {
         <Button onClick={()=>{clickButton()}}>제출</Button>
       </Container>
       {spiner && <div>처리중...</div>}
+      {Object.keys(usedMesoByItem).map((key, index) => {
+        return (
+          <div key={index}>
+            {key} : {usedMesoByItem[key].toLocaleString()} 메소
+          </div>
+        )
+      })}
+
     </>
   )
 };
