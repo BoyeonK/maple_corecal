@@ -1,11 +1,17 @@
 import styled from "styled-components"
+import { Content } from "../recoil/Atoms"
+import { useSetRecoilState } from "recoil"
 
-const Header = () => (
-  <HeaderContent>
-    <HeaderTap>강화할 코어</HeaderTap>
-    <HeaderTap>내 코어</HeaderTap>
-  </HeaderContent>
-)
+const Header = () => { 
+  const setContent = useSetRecoilState(Content)
+
+  return (
+    <HeaderContent>
+      <HeaderTap onClick={()=>setContent(0)}>코강</HeaderTap>
+      <HeaderTap onClick={()=>setContent(1)}>그거</HeaderTap>
+    </HeaderContent>
+  )
+}
 
 const HeaderContent = styled.div`
   display: flex;
@@ -23,6 +29,7 @@ const HeaderTap = styled.div`
   justify-content: center;
   align-items: center;
   width: 200px;
+  cursor: pointer;
 `
   
 export default Header

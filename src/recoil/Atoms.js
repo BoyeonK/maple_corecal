@@ -1,5 +1,10 @@
 import {atom} from "recoil"
 
+export const Content = atom({
+  key: "Content",
+  default: 0,
+})
+
 export const SelectedRole = atom({
   key: "SelectedRole",
   default: '',
@@ -12,7 +17,7 @@ export const CoreList = atom({
 
 export const SelectedCores = atom({
   key: "SelectedCores",
-  default: [false, false, false, false, false, false, false, false, false, false],
+  default: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
 })
 
 export const StepT = atom({
