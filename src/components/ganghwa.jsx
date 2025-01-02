@@ -26,7 +26,7 @@ const GangHwa = () => {
     setApiKey(e.target.value)
   }
 
-  const setHistory = (itemname, sc) => {
+  const setHistory = (itemname, sc, ct, up) => {
     let itemLevelAcc
     if (itemname.length < 4) return
     const fname = itemname.substring(0, 4)
@@ -44,7 +44,7 @@ const GangHwa = () => {
       return
     }
 
-    const meso = accquiredMeso(itemLevelAcc, sc)
+    const meso = accquiredMeso(itemLevelAcc, sc, ct, up)
 
     if (myhistory[itemname] === undefined) {
       myhistory[itemname] = meso
@@ -60,9 +60,9 @@ const GangHwa = () => {
         const sc = e.before_starforce_count
         const ct = (e.chance_time === "찬스타임 미적용") ? false : true
         //const dd = (e.destroy_defence === "파괴 방지 미적용") ? false : true
-        //const up = e.upgrage_item
+        const up = (e.upgrade_item === "") ? false : true
         const itemname = e.target_item
-        setHistory(itemname, sc, ct)
+        setHistory(itemname, sc, ct, up)
       })
     })
     setspiner(false)

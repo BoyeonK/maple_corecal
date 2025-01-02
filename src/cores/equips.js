@@ -1,8 +1,9 @@
-export const accquiredMeso = (accLevel, starforce, ct) => {
+export const accquiredMeso = (accLevel, starforce, ct, up) => {
     const numerator = [36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 571, 314, 214, 157, 107, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200][starforce]
     const multiplier = (starforce < 10) ? 1 : 2.7
     let meso = 1000 + Math.pow(accLevel, 3)*Math.pow(starforce+1, multiplier)/numerator
     if (ct) meso *= 0.7
+    if (up) meso = 0
     return Math.round(meso/10)*10
 }
 
