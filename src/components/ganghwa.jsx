@@ -11,6 +11,8 @@ const GangHwa = () => {
   const [eValue, setEValue] = useState('')
   const [apiKey, setApiKey] = useState('')
   const [spiner, setspiner] = useState(false)
+  const [isError, setIsError] = useState(false)
+  const [errorCode, setErrorCode] = useState('')
   const [usedMesoByItem, setUsedMesoByItem] = useRecoilState(UsedMesoByItem)
   const dataArray = []
   let myhistory = {}
@@ -27,7 +29,7 @@ const GangHwa = () => {
     setApiKey(e.target.value)
   }
 
-  const setHistory = (itemname, sc, ct, up) => {
+  const setHistory = (itemname, sc, ct, up, cname) => {
     let itemLevelAcc
     if (itemname.length < 4) return
     const fname = itemname.substring(0, 4)
@@ -47,10 +49,13 @@ const GangHwa = () => {
 
     const meso = accquiredMeso(itemLevelAcc, sc, ct, up)
 
-    if (myhistory[itemname] === undefined) {
-      myhistory[itemname] = meso
+    if (myhistory[cname] === undefined) {
+      myhistory[cname] = {}
+    }
+    if (myhistory[cname][itemname] === undefined) {
+      myhistory[cname][itemname] = meso
     } else {
-      myhistory[itemname] += meso
+      myhistory[cname][itemname] += meso
     }
   }
 
@@ -63,7 +68,8 @@ const GangHwa = () => {
         //const dd = (e.destroy_defence === "파괴 방지 미적용") ? false : true
         const up = (e.upgrade_item === "") ? false : true
         const itemname = e.target_item
-        setHistory(itemname, sc, ct, up)
+        const cname = e.character_name
+        setHistory(itemname, sc, ct, up, cname)
       })
     })
     setspiner(false)
@@ -74,6 +80,7 @@ const GangHwa = () => {
   const callApi = async (stime, etime) => {
     if (stime > etime) { 
       DispatchJobQueue()
+      setIsError(false)
       return
     }
     let data
@@ -98,6 +105,9 @@ const GangHwa = () => {
       }
     }).catch((err) => {
       console.log(err)
+      setspiner(false)
+      setIsError(true)
+      setErrorCode(err.message)
     })
   }
 
@@ -116,6 +126,9 @@ const GangHwa = () => {
       }
     }).catch((err) => {
       console.log(err)
+      setspiner(false)
+      setIsError(true)
+      setErrorCode(err.message)
     })
   }
 
@@ -210,16 +223,35 @@ const GangHwa = () => {
         <Button onClick={()=>{clickButton()}}>제출</Button>
       </Container>
       {spiner && <div>처리중...</div>}
+      {isError && <div>{errorCode}</div>}
       {Object.keys(usedMesoByItem).map((key, index) => {
         return (
-          <div key={index}>
-            {key} : {usedMesoByItem[key].toLocaleString()} 메소
+          <div>
+            <CharIdDiv key={index}>
+              {key}
+            </CharIdDiv>
+            <div>
+              {Object.keys(usedMesoByItem[key]).map((key2, index2) => {
+                return (
+                  <div key={index2}>
+                    {key2} : {usedMesoByItem[key][key2].toLocaleString()} 메소
+                  </div>
+                )
+              })}
+            </div>
           </div>
         )
       })}
     </>
   )
 };
+
+const CharIdDiv = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 21px;
+`;
 
 const Container = styled.div`
   display: flex;
