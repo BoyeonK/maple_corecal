@@ -1,12 +1,16 @@
 const starforceWorkerCode = `
-  self.onmessage = function(e) {
-    const count = e.data.params.count
-    const date = e.data.params.date
-    const key = e.data.headers['x-nxopen-api-key']
-    console.log("Count:", count)
-    console.log("Date:", date)
-    console.log("Key:", key)
-    self.postMessage("Hello ");
+  self.onmessage = (e) => {
+    let data
+    const url = "https://open.api.nexon.com/maplestory/v1/history/starforce"
+    const qString = new URLSearchParams(e.data.params).toString()
+    const fullUrl = url + "?" + qString
+    const headers = e.data.headers
+    fetch(fullUrl, {headers}).then((res) => res.json()).then((res) => {
+      data = res
+      self.postMessage(data)
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 `
 

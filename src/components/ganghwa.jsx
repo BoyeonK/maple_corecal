@@ -148,14 +148,43 @@ const GangHwa = () => {
   }
 
   const clickMTButton = () => {
-    const sWorker = makeSWorker()
-    const params = { "count": 1000, "date": "2024-01-01" }
-    const headers = {"x-nxopen-api-key": "abcd"}
-    sWorker.postMessage({params, headers})
-    sWorker.onmessage = (e) => {
-      console.log("Message from Worker:", e.data)
-      sWorker.terminate()
+    const sYear = Number(sValue.substring(0, 4))
+    const sMonth = Number(sValue.substring(5, 7))-1
+    const sDay = Number(sValue.substring(8, 10))
+    const eYear = Number(eValue.substring(0, 4))
+    const eMonth = Number(eValue.substring(5, 7))-1
+    const eDay = Number(eValue.substring(8, 10))
+
+    const sTime = Date.UTC(sYear, sMonth, sDay)
+    const eTime = Date.UTC(eYear, eMonth, eDay)
+    const diff = eTime - sTime
+
+    if (diff < 0) {
+      alert('날짜를 잘못 입력하셨습니다.')
+      setspiner(false)
+      return
     }
+
+    if (apiKey === '') {  
+      alert('API Key를 입력해주세요.')
+      setspiner(false)
+      return
+    } 
+
+    const array = []
+    /*
+    for(let i = 0; i <= eTime-sTime; i++) { 
+      const sWorker = makeSWorker()
+      const params = { "count": 1000, "date": "2024-12-01" }
+      const headers = {"x-nxopen-api-key": apiKey}
+      array.push(sWorker)
+      array[i].postMessage({params, headers})
+      array[i].onmessage = (e) => {
+        console.log("Message from Worker:", e.data)
+        array[i].terminate()
+      }
+    }
+    */
   }
 
   return (
