@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { bossAcc, Routa, accquiredMeso } from "../cores/equips";
+import { bossAcc, Routa, accquiredMeso } from "../stats/equips";
 import { useRecoilState } from "recoil";
 import { UsedMesoByItem } from "../recoil/Atoms";
 
@@ -176,7 +176,6 @@ const GangHwa = () => {
           </div>
         )
       })}
-
     </>
   )
 };
