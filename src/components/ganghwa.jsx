@@ -4,6 +4,7 @@ import axios from "axios";
 import { bossAcc, Routa, accquiredMeso } from "../stats/equips";
 import { useRecoilState } from "recoil";
 import { UsedMesoByItem } from "../recoil/Atoms";
+import { makeSWorker } from "../workers/starforceworker";
 
 const GangHwa = () => {
   const [sValue, setSValue] = useState('')
@@ -146,6 +147,17 @@ const GangHwa = () => {
     callApi(sTime, eTime)
   }
 
+  const clickMTButton = () => {
+    const sWorker = makeSWorker()
+    const params = { "count": 1000, "date": "2024-01-01" }
+    const headers = {"x-nxopen-api-key": "abcd"}
+    sWorker.postMessage({params, headers})
+    sWorker.onmessage = (e) => {
+      console.log("Message from Worker:", e.data)
+      sWorker.terminate()
+    }
+  }
+
   return (
     <>
       <Container>
@@ -168,6 +180,7 @@ const GangHwa = () => {
         />
         <Button onClick={()=>{clickButton()}}>제출</Button>
       </Container>
+      <Button onClick={()=>{clickMTButton()}}>multi</Button>
       {spiner && <div>처리중...</div>}
       {Object.keys(usedMesoByItem).map((key, index) => {
         return (
